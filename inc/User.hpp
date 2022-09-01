@@ -12,7 +12,7 @@ struct User {
 
   explicit User(UserName name, UserPassword pass)
       : name_{UserName{std::move(name)}}, id_{GetNewId()} {
-    AuthOracle();
+    Authorize();
   }
 
   static User Create(UserName name, UserPassword pass)
@@ -22,7 +22,7 @@ struct User {
 
 private:
   Id GetNewId() { return 0; }
-  void AuthOracle() {}
+  void Authorize() {}
 
 private:
   Id id_;

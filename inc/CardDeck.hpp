@@ -46,4 +46,10 @@ struct CardDeck final {
 private:
   ValueType value_;
 };
+
+bool Deal(CardDeck &deck, Place &place) noexcept
+{
+  return true;
+}
+
 } // namespace ru::hop
