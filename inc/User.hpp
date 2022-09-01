@@ -20,6 +20,8 @@ struct User {
     return User{UserName{L"Vld"}, UserPassword{"589"}};
   }
 
+  bool Say() { return false; }
+
 private:
   Id GetNewId() { return 0; }
   void Authorize() {}
