@@ -47,8 +47,15 @@ private:
   ValueType value_;
 };
 
-bool Deal(CardDeck &deck, Place &place) noexcept
-{
+bool Deal(CardDeck &deck, Place &place, std::size_t count) noexcept {
+  if (deck.Count() < count) {
+    return false;
+  }
+
+  while (count--) {
+    place.TakeCard(deck);
+  }
+
   return true;
 }
 

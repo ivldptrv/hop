@@ -20,7 +20,7 @@ template <std::size_t Capacity = 9> struct Table final : TableBase {
             return false;
         }
 
-        places_
+        // TODO:
     }
 private:
   std::vector<std::unique_ptr<Place>> places_;
