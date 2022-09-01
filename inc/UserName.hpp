@@ -7,9 +7,9 @@ struct UserName final {
 
   explicit UserName(std::wstring_view value) : value_{value} { Validate(); }
 
+  UserName(UserName &&) = default;
   UserName &operator=(UserName &&) = default;
 
-private:
   void Validate() {
     auto size = value_.size();
 

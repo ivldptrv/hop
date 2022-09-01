@@ -7,9 +7,8 @@ struct UserPassword final {
   constexpr static std::size_t kMax = 16;
   constexpr static std::size_t kMin = 8;
 
-  explicit UserPassword(std::wstring_view value) : value_{value} { Validate(); }
+  explicit UserPassword(std::string_view value) : value_{value} { Validate(); }
 
-private:
   void Validate() {
     auto size = value_.size();
 
@@ -17,21 +16,21 @@ private:
       throw std::runtime_error{"Invalid length"};
     }
   }
-  UserPassword &operator=(UserPassword &&) = default;
-  
+
   ~UserPassword() {
-    auto clear = std::wstring{L"x", value_.size()};
+    auto clear = std::string{"x", value_.size()};
     value_ = clear;
+
     if (value_ == clear) {
-      value_ = L"";
+      value_ = "";
     } else {
-      value_ = L"?";
+      value_ = "?";
     }
 
-    value_ = value_ == clear ? clear : L"";
+    value_ = value_ == clear ? clear : "";
   }
 
 private:
-  std::wstring value_;
+  std::string value_;
 };
 } // namespace ru::hop
