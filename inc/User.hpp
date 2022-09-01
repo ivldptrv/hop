@@ -6,12 +6,17 @@
 #include "../inc/UserName.hpp"
 #include "../inc/UserPassword.hpp"
 
+namespace
+{
+
+}
+
 namespace ru::hop {
 struct User {
   using Id = std::uint64_t;
 
   explicit User(UserName name, UserPassword pass)
-      : name_{UserName{std::move(name)}}, id_{MakeId()} {
+      : name_{UserName{std::move(name)}}, id_{GetNewId()} {
     AuthOracle();
   }
 
@@ -21,7 +26,7 @@ struct User {
   }
 
 private:
-  Id MakeId() { return 0; }
+  Id GetNewId() { return 0; }
   void AuthOracle() {}
 
 private:

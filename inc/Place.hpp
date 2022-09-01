@@ -3,12 +3,19 @@
 #include "../inc/CardDeck.hpp"
 
 namespace ru::hop {
-    using Bet = std::uint64_t;
-    
+using Bet = std::uint64_t;
+
 struct Place {
   using Hand = CardDeck;
 
   Place() noexcept : hand_{0} {}
+
+  void MakeBet(Bet size) noexcept {
+    stack_ -= size;
+    bet += size;
+  }
+  
+  void SetStack(Bet size) noexcept { stack_ = size; }
 
 private:
   Hand hand_;
