@@ -10,11 +10,17 @@ struct Place {
 
   Place() noexcept : hand_{0} {}
 
-  void MakeBet(Bet size) noexcept {
+  bool MakeBet(Bet size) noexcept {
+    if (size > stack_) {
+      return false;
+    }
+
     stack_ -= size;
     bet += size;
+
+    return true;
   }
-  
+
   void SetStack(Bet size) noexcept { stack_ = size; }
 
 private:
