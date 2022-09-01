@@ -10,4 +10,4 @@ private:
   Id id_;
   std::vector<Table> tables_;
 };
-} // namespace ru::hop
+} // namespace ru::hop_

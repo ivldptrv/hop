@@ -1,3 +1,0 @@
-/workspace/hop/build/CMakeFiles/hop.dir
-/workspace/hop/build/CMakeFiles/edit_cache.dir
-/workspace/hop/build/CMakeFiles/rebuild_cache.dir
