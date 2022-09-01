@@ -6,11 +6,6 @@
 #include "../inc/UserName.hpp"
 #include "../inc/UserPassword.hpp"
 
-namespace
-{
-
-}
-
 namespace ru::hop {
 struct User {
   using Id = std::uint64_t;
